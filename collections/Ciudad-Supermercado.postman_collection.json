@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "0211e725-06b1-4224-96ea-57f7a9dbeb13",
+		"name": "Ciudad-Supermercado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23970528"
+	},
+	"item": [
+		{
+			"name": "Add Supermarket to City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets/{{supermarket_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}",
+						"supermarkets",
+						"{{supermarket_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Supermarket to City",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets/{{supermarket_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}",
+								"supermarkets",
+								"{{supermarket_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\":\"48a9ab90-1276-11ed-861d-0242ac120661\",\n    \"name\": \"Buenos Aires\",\n    \"country\": \"Argentina\",\n    \"population\": 16600000,\n    \"supermarkets\":[\n        {\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n            \"name\": \"Supermercado La Economía\",\n            \"latitude\": -34.671157,\n            \"longitude\": -58.506774,\n            \"web_page_url\": \"www.supermercadolaeconomia.com.ar\"\n        },\n        {\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n            \"name\": \"Supermercado El Ahorro\",\n            \"latitude\": -34.671057,\n            \"longitude\": -58.306774,\n            \"web_page_url\": \"www.supermercadoelahorro.com.ar\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Supermarkets from City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}",
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Supermarkets from City",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}",
+								"supermarkets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n        \"name\": \"Supermercado La Economía\",\n        \"latitude\": -34.671157,\n        \"longitude\": -58.506774,\n        \"web_page_url\": \"www.supermercadolaeconomia.com.ar\"\n    },\n    {\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n        \"name\": \"Supermercado El Ahorro\",\n        \"latitude\": -34.671057,\n        \"longitude\": -58.306774,\n        \"web_page_url\": \"www.supermercadoelahorro.com.ar\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Find Supermarket from City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets/{{supermarket_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}",
+						"supermarkets",
+						"{{supermarket_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Supermarket from City",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets/{{supermarket_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}",
+								"supermarkets",
+								"{{supermarket_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n    \"name\": \"Supermercado El Ahorro\",\n    \"latitude\": -34.671057,\n    \"longitude\": -58.306774,\n    \"web_page_url\": \"www.supermercadoelahorro.com.ar\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Supermakets from City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n       \"id\": \"{{supermarket_id_2}}\"\n   }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}",
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Supermakets from City",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"{{supermarket_id_2}}\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}",
+								"supermarkets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\":\"48a9ab90-1276-11ed-861d-0242ac120661\",\n    \"name\": \"Buenos Aires\",\n    \"country\": \"Argentina\",\n    \"population\": 16600000,\n    \"supermarkets\":[\n        {\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n            \"name\": \"Supermercado La Economía\",\n            \"latitude\": -34.671157,\n            \"longitude\": -58.506774,\n            \"web_page_url\": \"www.supermercadolaeconomia.com.ar\"\n        },\n        {\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n            \"name\": \"Supermercado El Ahorro\",\n            \"latitude\": -34.671057,\n            \"longitude\": -58.306774,\n            \"web_page_url\": \"www.supermercadoelahorro.com.ar\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Supermarket from City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets/{{supermarket_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}",
+						"supermarkets",
+						"{{supermarket_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Supermarket from City",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}/supermarkets/{{supermarket_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}",
+								"supermarkets",
+								"{{supermarket_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}

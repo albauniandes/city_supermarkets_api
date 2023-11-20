@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "54927659-ea0b-4f36-9982-f1f7c73f6508",
+		"name": "Ciudades",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23970528"
+	},
+	"item": [
+		{
+			"name": "Find All Cities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of cities > ' + 0, function () {",
+							"   var data = pm.response.json()",
+							"   pm.expect(data.length).to.greaterThan(0)",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find All Cities",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\":\"48a9ab90-1276-11ed-861d-0242ac120661\",\n        \"name\": \"Buenos Aires\",\n        \"country\": \"Argentina\",\n        \"population\": 16600000,\n        \"supermarkets\":[\n            {\n                \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n                \"name\": \"Supermercado La Economía\",\n                \"latitude\": -34.671157,\n                \"longitude\": -58.506774,\n                \"web_page_url\": \"www.supermercadolaeconomia.com.ar\"\n            },\n            {\n                \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n                \"name\": \"Supermercado El Ahorro\",\n                \"latitude\": -34.671057,\n                \"longitude\": -58.306774,\n                \"web_page_url\": \"www.supermercadoelahorro.com.ar\"\n            }\n        ]\n    },\n    {\n        \"id\":\"48a9ab90-1276-11ed-861d-0242ac120662\",\n        \"name\": \"Asunción\",\n        \"country\": \"Paraguay\",\n        \"population\": 525252,\n        \"supermarkets\":[\n            {\n                \"id\": \"48a9ab90-1276-11ed-861d-024275220099\",\n                \"name\": \"Supermercado Surtifruver\",\n                \"latitude\": -25.287828,\n                \"longitude\": -57.602557,\n                \"web_page_url\": \"www.supermercadosurtifruver.com\"\n            }\n        ]\n    },\n    {\n        \"id\":\"48a9ab90-1276-11ed-861d-0242ac120665\",\n        \"name\": \"Quito\",\n        \"country\": \"Ecuador\",\n        \"population\": 2011000,\n        \"supermarkets\":[\n            {\n                \"id\": \"48a9ab90-4476-11ed-861d-024275220072\",\n                \"name\": \"Supermercado El Arriero\",\n                \"latitude\": -0.211999,\n                \"longitude\": -78.493730,\n                \"web_page_url\": \"www.supermercadoelarriero.com\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Find One City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find One City",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\":\"48a9ab90-1276-11ed-861d-0242ac120661\",\n    \"name\": \"Buenos Aires\",\n    \"country\": \"Argentina\",\n    \"population\": 16600000,\n    \"supermarkets\":[\n        {\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n            \"name\": \"Supermercado La Economía\",\n            \"latitude\": -34.671157,\n            \"longitude\": -58.506774,\n            \"web_page_url\": \"www.supermercadolaeconomia.com.ar\"\n        },\n        {\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120099\",\n            \"name\": \"Supermercado El Ahorro\",\n            \"latitude\": -34.671057,\n            \"longitude\": -58.306774,\n            \"web_page_url\": \"www.supermercadoelahorro.com.ar\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Buenos Aires\",\n   \"country\": \"Argentina\",\n   \"population\": 16600000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create City",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\": \"Buenos Aires\",\n   \"country\": \"Argentina\",\n   \"population\": 16600000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cities",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"id\":\"48a9ab90-1276-11ed-861d-0242ac120661\",\n   \"name\": \"Buenos Aires\",\n   \"country\": \"Argentina\",\n   \"population\": 16600000\n}"
+				}
+			]
+		},
+		{
+			"name": "Update City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Buenos Aires\",\n   \"country\": \"Argentina\",\n   \"population\": 16600005\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update City",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\": \"Buenos Aires\",\n   \"country\": \"Argentina\",\n   \"population\": 16600005\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\":\"48a9ab90-1276-11ed-861d-0242ac120661\",\n    \"name\": \"Buenos Aires\",\n    \"country\": \"Argentina\",\n    \"population\": 16600005\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{city_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{city_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete City",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{city_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{city_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}
